@@ -21,7 +21,7 @@ const Products = async () => {
               className="flex gap-2 hover:text-black cursor-pointer duration-200"
             >
               <FolderGit2 />
-              <p>Systems</p>
+              <p>Mobile</p>
             </Link>
             <div className="h-7 w-[1px] bg-designColor inline-flex" />
             <Link
@@ -29,7 +29,7 @@ const Products = async () => {
               className="flex items-center gap-2 hover:text-black cursor-pointer duration-200"
             >
               <Bot />
-              <p>AI</p>
+              <p>Phone Case</p>
             </Link>
             <div className="h-7 w-[1px] bg-designColor inline-flex" />
 
@@ -38,7 +38,7 @@ const Products = async () => {
               className="flex items-center gap-2 hover:text-black cursor-pointer duration-200"
             >
               <GalleryVerticalEnd />
-              <p>Portfolio/Landing Page</p>
+              <p>Watch</p>
             </Link>
             <div className="h-7 w-[1px] bg-designColor inline-flex" />
 
@@ -47,7 +47,7 @@ const Products = async () => {
               className="flex items-center gap-2 hover:text-black cursor-pointer duration-200"
             >
               <LayoutGrid />
-              <p>Mobile/Desktop Applications</p>
+              <p>Others</p>
             </Link>
           </div>
         </div>
