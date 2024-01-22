@@ -1,6 +1,6 @@
-import sliderOne from "@/assets/slider/sliderOne.png";
-import sliderTwo from "@/assets/slider/sliderTwo.png";
-import sliderThree from "@/assets/slider/sliderThree.png";
-import sliderFour from "@/assets/slider/sliderFour.png";
+import sliderOne from "@/assets/slider/sliderOne.jpg";
+import sliderTwo from "@/assets/slider/sliderTwo.jpg";
+import sliderThree from "@/assets/slider/sliderThree.jpg";
+import sliderFour from "@/assets/slider/sliderFour.jpg";
 
 export { sliderOne, sliderTwo, sliderThree, sliderFour };

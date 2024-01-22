@@ -15,7 +15,7 @@ interface Item {
 
 const Product = ({ products }: Item) => {
   const { favoriteData } = useSelector((state: StateProps) => state.pro);
-
+  console.log(products)
   const isFavorite = (productId: any) => {
     return favoriteData.some((favoriteItem) => favoriteItem._id === productId);
   };
@@ -38,7 +38,7 @@ const Product = ({ products }: Item) => {
             />
           </Link>
           <Heart
-            fill={isFavorite(item._id) ? "red" : "black"}
+            fill={isFavorite(item._id) ? "red" : "gray"}
             onClick={() => {
               dispatch(addToFavorite(item));
               if (isFavorite(item?._id)) {

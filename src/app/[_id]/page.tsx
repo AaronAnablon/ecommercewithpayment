@@ -58,9 +58,6 @@ const page = async ({ searchParams }: Props) => {
           <p className="text-designColor font-semibold">New Arrival</p>
         )}
         <p>
-          Brand: <span className="font-semibold">{product?.brand}</span>
-        </p>
-        <p>
           Category: <span className="font-semibold">{product?.category}</span>
         </p>
         <p>{product?.description}</p>

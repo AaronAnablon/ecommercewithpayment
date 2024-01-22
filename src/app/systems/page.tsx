@@ -1,15 +1,16 @@
 import Container from "@/components/Container";
 import Product from "@/components/Product";
-import { getPhones, getWatches } from "@/helpers";
+import { getPhones } from "@/helpers";
 import React from "react";
 
 const page = async () => {
-  const products = await getWatches();
+  const products = await getPhones();
+ 
   return (
     <Container>
       <div className="border-b-[1px] border-b-zinc-400 pb-4 flex items-center justify-between">
-        <h2>Watches</h2>
-        <p>Get the Watch you want</p>
+        <h2>Systems</h2>
+        <p>Get the Systems you want</p>
       </div>
       <p className="mt-4 text-zinc-500 font-semibold">
         Showing all {products.length} results
