@@ -20,6 +20,19 @@ const page = async ({ searchParams }: Props) => {
 
   const product = singleProduct(_id);
 
+  console.log(product)
+  // Handle case where product is not found
+  if (!product) {
+    return (
+      <Container className="flex items-center justify-center py-20">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-zinc-900">Product not found</h1>
+          <p className="text-zinc-600 mt-2">The product you are looking for does not exist.</p>
+        </div>
+      </Container>
+    );
+  }
+
   return (
     <Container className="flex items-center flex-col md:flex-row gap-8 px-4 xl:px-0 py-10">
       {/* Image Section with Enhanced Visual Effects */}
@@ -59,24 +72,28 @@ const page = async ({ searchParams }: Props) => {
         <div className="bg-gradient-to-br from-zinc-50 to-zinc-100 p-6 rounded-2xl border-2 border-zinc-200 shadow-lg">
           <div className="flex items-baseline gap-4 mb-3">
             <FormattedPrice
-              amount={product?.price}
+              amount={product.price || 0}
               className="text-4xl font-bold text-zinc-900"
             />
-            <FormattedPrice
-              amount={product?.previousPrice}
-              className="text-xl text-zinc-400 line-through"
-            />
+            {product.previousPrice && product.previousPrice > product.price && (
+              <FormattedPrice
+                amount={product.previousPrice}
+                className="text-xl text-zinc-400 line-through"
+              />
+            )}
           </div>
-          <div className="flex items-center gap-2 bg-green-50 border-2 border-green-200 px-4 py-2 rounded-xl">
-            <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-            </svg>
-            <span className="text-green-700 font-semibold">You save </span>
-            <FormattedPrice
-              amount={product?.previousPrice - product?.price}
-              className="text-lg font-bold text-green-700"
-            />
-          </div>
+          {product.previousPrice && product.previousPrice > product.price && (
+            <div className="flex items-center gap-2 bg-green-50 border-2 border-green-200 px-4 py-2 rounded-xl">
+              <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span className="text-green-700 font-semibold">You save </span>
+              <FormattedPrice
+                amount={product.previousPrice - product.price}
+                className="text-lg font-bold text-green-700"
+              />
+            </div>
+          )}
         </div>
 
         {/* Add to Cart Button */}

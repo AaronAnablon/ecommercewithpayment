@@ -6,7 +6,10 @@ type Props = {
 };
 
 const FormattedPrice = ({ amount, className }: Props) => {
-  const formattedAmount = new Number(amount).toLocaleString("en-US", {
+  // Handle undefined, null, or NaN values
+  const validAmount = typeof amount === 'number' && !isNaN(amount) ? amount : 0;
+  
+  const formattedAmount = new Number(validAmount).toLocaleString("en-US", {
     style: "currency",
     currency: "USD",
     maximumFractionDigits: 2,
