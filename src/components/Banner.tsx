@@ -134,7 +134,7 @@ const Banner = () => {
               Shop The<br />Best Deals
             </h1>
             <p className="w-96 text-center text-gray-600 text-lg leading-relaxed">
-              Discover amazing products at unbeatable prices and get the one you've been dreaming of
+              Discover amazing products at unbeatable prices and get the one you&apos;ve been dreaming of
             </p>
             <button className="group relative text-base font-semibold text-white bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 rounded-full px-8 py-4 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
               View Collection
